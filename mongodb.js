@@ -6,7 +6,7 @@ const client = new MongoClient(url);
 async function dbconnect() {
     let result = await client.connect();
     let db = result.db(database);
-    return db.collection('responselist');
+    return db.collection('responsedata');
 
 }
 
