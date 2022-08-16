@@ -1,12 +1,20 @@
 const express = require("express");
 const dbconnect = require("./mongodb");
-const route  = express();
+const app = express();
+const port = 5000;
 
-route.get("/", async (req, res) => {
+app.get("/", async (req, res) => {
     let data = await dbconnect();
     data = await data.find().toArray();
     console.warn("send successful");
     res.send(data);
 });
 
-route.listen(5000);
+app.post("/login",(req,res)=>{
+    let responseList =req.body;
+    res.send(responseList);
+})
+
+app.listen(port, () => {
+    console.log(`Example app listening on port http://localhost:${port}`);
+})
