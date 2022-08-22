@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 
 exports.registerController = function (req, res) {
     User.find({ email: req.body.email })
-        .exec()
         .then(user => {
             if (user.length >= 1) {
                 return res.status(409).json({
@@ -31,4 +30,7 @@ exports.registerController = function (req, res) {
                 });
             }
         })
+        .catch((error) => {
+            res.send(error);
+        });
 }
