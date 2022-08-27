@@ -10,4 +10,4 @@ const userListSchema = new mongoose.Schema({
     updatedAt: { type: String, required: true }
 });
 
-module.exports = mongoose.model('userList', userListSchema);
+module.exports = mongoose.model('userdetails', userListSchema);
