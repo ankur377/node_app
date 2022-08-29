@@ -3,10 +3,10 @@ const app = express();
 let bodyparser = require('body-parser');
 let jsonparser = bodyparser.json();
 
-const routesapi =require('./routes/main');
+const routesapi = require('./routes/main');
 
 
-app.use('/api',jsonparser,routesapi);
+app.use('/api', jsonparser, routesapi);
 
 
 

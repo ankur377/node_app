@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Hello world!</title>
-  </head>
-  <body>
-    <h1>User List</h1>
-    <table>
-      <tr>
-        <td>_id</td>
-        <td>title</td>
-        <td>body</td>
-        <td>status</td>
-        <td>userId</td>
-        <td>data-type</td>
-        <td>data-route</td>
-        <td>createdAt</td>
-        <td>updatedAt</td>
 
-      </tr>
-      {{#each users}}
-      <tr>
-        <td>{{this._id.$oid}}</td>
-        <td>{{this.title}}</td>
-        <td>{{this.body}}</td>
-        <td>{{this.status}}</td>
-        <td>{{this.reason}}</td>
-        <td>{{this.userId}}</td>
-        <td>{{this.data.type}}</td>
-        <td>{{this.data.route}}</td>
-        <td>{{this.createdAt}}</td>
-        <td>{{this.updatedAt}}</td>
-      </tr>
-      {{/each}}
-    </table>
-    
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Hello world!</title>
+</head>
+
+<body>
+  <h1>User List</h1>
+  <table>
+    <tr>
+      <td>_id</td>
+      <td>title</td>
+      <td>body</td>
+      <td>status</td>
+      <td>userId</td>
+      <td>data-type</td>
+      <td>data-route</td>
+      <td>createdAt</td>
+      <td>updatedAt</td>
+
+    </tr>
+    {{#each users}}
+    <tr>
+      <td>{{this._id.$oid}}</td>
+      <td>{{this.title}}</td>
+      <td>{{this.body}}</td>
+      <td>{{this.status}}</td>
+      <td>{{this.reason}}</td>
+      <td>{{this.userId}}</td>
+      <td>{{this.data.type}}</td>
+      <td>{{this.data.route}}</td>
+      <td>{{this.createdAt}}</td>
+      <td>{{this.updatedAt}}</td>
+    </tr>
+    {{/each}}
+  </table>
+
+</body>
+
 </html>

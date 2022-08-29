@@ -17,7 +17,7 @@ exports.pdfcontroller = async (req, res) => {
             data: {
                 users: user,
             },
-            path:'./docs/' + filename,
+            path: './docs/' + filename,
             type: "",
         };
         pdf

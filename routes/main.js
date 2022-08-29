@@ -11,12 +11,12 @@ const pdfcontroll = require('../controllers/pdfcontroller');
 router.get("/", checkAge, showList.getAllRecord);
 
 // TODO:LOGIN ROUTE
-router.post("/login",login.logincontroller);
+router.post("/login", login.logincontroller);
 
 
 // TODO:REGISTER ROUTE
-router.post('/register',register.registerController);
+router.post('/register', register.registerController);
 
-router.get('/userLists',pdfcontroll.pdfcontroller);
+router.get('/userLists', pdfcontroll.pdfcontroller);
 
 module.exports = router
