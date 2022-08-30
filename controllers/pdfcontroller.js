@@ -7,9 +7,9 @@ const userDetail = require('../models/userList');
 const options = require('../helper/options');
 
 
-exports.pdfcontroller = async (req, res) => {
+exports.pdfController = async (req, res) => {
     userDetail.find().lean().then((result) => {
-        const filename = Math.random() + '_doc' + '.pdf';
+        const fileName = Math.random() + '_doc' + '.pdf';
 
         let user = result;
         var document = {
@@ -17,7 +17,7 @@ exports.pdfcontroller = async (req, res) => {
             data: {
                 users: user,
             },
-            path: './docs/' + filename,
+            path: './docs/' + fileName,
             type: "",
         };
         pdf

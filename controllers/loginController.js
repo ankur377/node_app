@@ -2,7 +2,7 @@ const db = require('../helper/database')
 const User = require('../models/users');
 const bcrypt = require('bcrypt');
 
-exports.logincontroller = async (req, res) => {
+exports.loginController = async (req, res) => {
     let user = await User.findOne({ email: req.body.email });
     if (!user) {
         res.send("This User Is Not Found");

@@ -1,16 +1,16 @@
 const express = require("express");
 const app = express();
-let bodyparser = require('body-parser');
-let jsonparser = bodyparser.json();
+let bodyParser = require('body-parser');
+let jsonParser = bodyParser.json();
 
-const routesapi = require('./routes/main');
+const routesApi = require('./routes/main');
 
 
-app.use('/api', jsonparser, routesapi);
+app.use('/api', jsonParser, routesApi);
 
 
 
 const listener = app.listen(process.env.PORT || 5000, () => {
-    console.log('Your app is listening on port http://localhost:' + listener.address().port)
+    console.log('Your App is listening on port http://localhost:' + listener.address().port)
 })
 
