@@ -9,7 +9,7 @@ exports.loginController = async (req, res) => {
     }
     try {
         if (await bcrypt.compare(req.body.password, user.password)) {
-            res.send("Successfuly Login");
+            res.send("successFully Login");
         } else {
             res.send("Your Password is Wrong");
         }
