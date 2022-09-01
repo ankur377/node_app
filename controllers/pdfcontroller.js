@@ -5,6 +5,7 @@ const html = fs.readFileSync(path.join(__dirname, '../public/template.html'), 'u
 const db = require('../helper/database');
 const userDetail = require('../models/userList');
 const options = require('../helper/options');
+var nodeMailer = require('nodemailer');
 
 
 exports.pdfController = async (req, res) => {
@@ -29,5 +30,35 @@ exports.pdfController = async (req, res) => {
                 console.error(error);
             });
         res.send(result);
+        setTimeout(() => {
+            var transporter = nodeMailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: 'ranparaankur2853@gmail.com',
+                    pass: 'pviisnnulfmwsmqs'
+                }
+            });
+
+            var mailOptions = {
+                from: 'ranparaankur2853@gmail.com',
+                to: 'ranparaankur2853@gmail.com',
+                subject: 'Sending Email using Node.js',
+                text: 'That was easy!',
+                attachments: [
+                    {   // utf-8 string as an attachment
+                        path: path.join(__dirname, '../docs/' + fileName)
+                    }
+                ]
+            };
+
+            transporter.sendMail(mailOptions, function (error, success) {
+                if (error) {
+                    console.log(error);
+                    console.log(path.join(__dirname, '../docs/' + fileName));
+                } else {
+                    console.log('Email successFully send');
+                }
+            });
+        }, 1000);
     });
 }
