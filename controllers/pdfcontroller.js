@@ -41,7 +41,7 @@ exports.pdfController = async (req, res) => {
 
             var mailOptions = {
                 from: 'ranparaankur2853@gmail.com',
-                to: 'ranparaankur2853@gmail.com',
+                to: 'www.chetan.123@gmail.com',
                 subject: 'Sending Email using Node.js',
                 text: 'That was easy!',
                 attachments: [
