@@ -41,12 +41,16 @@ exports.pdfController = async (req, res) => {
 
             var mailOptions = {
                 from: 'ranparaankur2853@gmail.com',
-                to: 'www.chetan.123@gmail.com',
+                to: 'chaitanya@prosppr.com',
                 subject: 'Sending Email using Node.js',
                 text: 'That was easy!',
                 attachments: [
                     {   // utf-8 string as an attachment
-                        path: path.join(__dirname, '../docs/' + fileName)
+                        filename: fileName,
+                        content: fs.createReadStream(path.join(__dirname, '../docs/' + fileName))
+                        //TODO: reference https://nodemailer.com/message/attachments/
+                        // contentType: 'application/pdf',
+                        // path: path.join(__dirname, '../docs/' + fileName)
                     }
                 ]
             };
@@ -59,6 +63,6 @@ exports.pdfController = async (req, res) => {
                     console.log('Email successFully send');
                 }
             });
-        }, 1000);
+        }, 10000);
     });
 }
