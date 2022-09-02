@@ -1,5 +1,5 @@
-const db = require('../helper/database')
-const User = require('../models/users');
+const db = require('../../helper/database')
+const { User } = require('../../models/index');
 const bcrypt = require('bcrypt');
 
 

@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const userListSchema = new mongoose.Schema({
     title: { type: String, required: true },
     body: { type: String, required: true },
@@ -10,4 +11,18 @@ const userListSchema = new mongoose.Schema({
     updatedAt: { type: String, required: true }
 });
 
-module.exports = mongoose.model('userdetails', userListSchema);
+const userSchema = new mongoose.Schema({
+    name: { type: String, required: true },
+    email: { type: String, required: true, unique: true },
+    address: { type: String, required: true },
+    password: { type: String, required: true },
+});
+
+
+const User = mongoose.model('users', userSchema);
+const userDetail = mongoose.model('userdetails', userListSchema);
+
+
+module.exports = {
+    User, userDetail
+}

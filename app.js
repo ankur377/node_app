@@ -4,7 +4,7 @@ const app = express();
 let bodyParser = require('body-parser');
 let jsonParser = bodyParser.json();
 
-const routesApi = require('./routes/main');
+const routesApi = require('./routes/index');
 
 
 app.use('/api', jsonParser, routesApi);
