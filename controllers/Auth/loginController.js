@@ -1,5 +1,5 @@
 const db = require('../../helper/database')
-const User = require('../../models/index');
+const { User } = require('../../models/index');
 const bcrypt = require('bcrypt');
 
 exports.loginController = async (req, res) => {
