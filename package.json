@@ -27,6 +27,7 @@
     "html-pdf": "^3.0.1",
     "mongodb": "^4.8.1",
     "mongoose": "^6.5.2",
+    "node-cron": "^3.0.2",
     "node-json2html": "^2.2.2",
     "nodemailer": "^6.7.8",
     "nodemon": "^2.0.19",
