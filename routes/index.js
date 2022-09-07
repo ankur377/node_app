@@ -8,7 +8,7 @@ const register = require('../controllers/Auth/registerController');
 const pdfControll = require('../controllers/pdfController');
 const cronjobController = require('../controllers/cronjobController');
 const childController = require('../controllers/childController');
-
+const fileController = require('../controllers/fileController');
 
 // TODO:GET ROUTE
 router.get("/", checkAge, showList.getAllRecord);
@@ -26,5 +26,8 @@ router.get('/userLists', pdfControll.pdfController);
 router.get('/task', cronjobController.cronjobController);
 
 router.get('/child', childController.childController);
+
+router.post('/upload', fileController.fileController);
+
 
 module.exports = router
