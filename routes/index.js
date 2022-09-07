@@ -7,6 +7,8 @@ const login = require('../controllers/Auth/loginController');
 const register = require('../controllers/Auth/registerController');
 const pdfControll = require('../controllers/pdfController');
 const cronjobController = require('../controllers/cronjobController');
+const childController = require('../controllers/childController');
+
 
 // TODO:GET ROUTE
 router.get("/", checkAge, showList.getAllRecord);
@@ -21,8 +23,8 @@ router.post('/register', register.registerController);
 router.get('/userLists', pdfControll.pdfController);
 
 // Creating a cron job which runs on every 60 second
+router.get('/task', cronjobController.cronjobController);
 
-router.get('/task',cronjobController.cronjobController);
-
+router.get('/child', childController.childController);
 
 module.exports = router
